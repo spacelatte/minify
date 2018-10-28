@@ -48,10 +48,7 @@ data_t* decompress(FILE *fp) {
 	chunk_t chunk = { 0 };
 	data_t *data = malloc(sizeof(data_t));
 	size_t length = fread(&chunk, 1, sizeof(chunk_t), fp);
-	if(length != sizeof(chunk)) {
-		return NULL;
-	}
-	if(!chunk.count) {
+	if(length != sizeof(chunk) || !chunk.count) {
 		return NULL;
 	}
 	if(chunk.count < 0) {
