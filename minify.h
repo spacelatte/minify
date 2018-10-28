@@ -3,6 +3,7 @@
 #define _MINIFY_H_
 
 #include <stdint.h>
+#include <stdbool.h>
 
 #ifndef SUFFIX
 #define SUFFIX ".min"
@@ -12,7 +13,8 @@
 #define BLOCKSIZE 16
 #endif
 
-typedef enum { false, true, } bool;
+// TODO: remove, deprecated
+//typedef enum { false, true, } bool;
 
 typedef struct Chunk {
 	char block[BLOCKSIZE];
@@ -25,7 +27,6 @@ typedef struct Data {
 	void *data;
 } data_t;
 
-chunk_t* chunk_make(size_t, size_t);
 chunk_t* compress(FILE*);
 data_t* decompress(FILE*);
 size_t action(FILE*, FILE*, bool);
