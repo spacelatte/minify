@@ -84,6 +84,7 @@ size_t action(FILE *out, FILE *in, bool mode) {
 				free(self);
 			}
 		}
+		//fflush(stdout);
 		count += 1;
 		continue;
 	}
