@@ -69,7 +69,7 @@ data_t* decompress(FILE *fp) {
 size_t action(FILE *out, FILE *in, bool mode) {
 	size_t count = 0;
 	while(!feof(in)) {
-		printf("block: %8lu\r", count+1);
+		printf("block: %*lu\r", 8, count+1);
 		if(mode) {
 			chunk_t *chunk = compress(in);
 			if(chunk != NULL) {
