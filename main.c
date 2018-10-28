@@ -1,5 +1,4 @@
 
-
 #include <stdio.h>
 #include <string.h>
 #include <errno.h>
@@ -7,7 +6,7 @@
 
 #include "minify.h"
 
-int main(int argc, const char** argv) {
+int main(int argc, const char **argv) {
 	const char *suffix = SUFFIX;
 	size_t length_suffix = strlen(suffix);
 	for(int i=1; i<argc; i++) {
