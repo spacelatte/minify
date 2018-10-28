@@ -7,6 +7,7 @@
 //
 
 #include <stdio.h>
+#include <stdint.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
@@ -53,8 +54,8 @@ data_t* decompress(FILE *fp) {
 	if(!chunk.count) {
 		return NULL;
 	}
-	if((long) chunk.count < 0) {
-		data->size = -chunk.count;
+	if(chunk.count < 0) {
+		data->size = abs(chunk.count);
 		data->data = malloc(data->size);
 		memcpy(data->data, chunk.block, data->size);
 		return data;

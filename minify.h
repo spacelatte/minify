@@ -2,6 +2,8 @@
 #ifndef _MINIFY_H_
 #define _MINIFY_H_
 
+#include <stdint.h>
+
 #ifndef SUFFIX
 #define SUFFIX ".min"
 #endif
@@ -14,12 +16,12 @@ typedef enum { false, true, } bool;
 
 typedef struct Chunk {
 	char block[BLOCKSIZE];
-	//size_t length;
-	size_t count;
+	//size_t length; // TODO: impl later?
+	int32_t count;
 } chunk_t;
 
 typedef struct Data {
-	size_t size;
+	uint64_t size;
 	void *data;
 } data_t;
 
