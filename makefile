@@ -1,6 +1,5 @@
 #!/usr/bin/env make -f
 
-
 AR              := ar
 CC              := clang
 LD              := ld
